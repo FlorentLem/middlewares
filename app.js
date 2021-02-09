@@ -6,9 +6,7 @@ const myLogger = (req, res, next) => {
     next();
 };
 
-app.use(myLogger);
-
-app.get("/superMiddleware", (req, res) => {
+app.get("/superMiddleware", myLogger, (req, res) => {
    res.send("hello world");
 });
 
